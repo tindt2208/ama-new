@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 import './styles.css'
 import styles from './styles.module.css'
 import styles1 from '../styles.module.css'
+import useWindowDimensions from '../../hooks/useWindowDimension';
 
 import ErrorMobile from '@/app/components/errorMobile/index'
 
@@ -32,7 +33,9 @@ export default function Home() {
     const [urlImages, setUrlImages] = useState([]);
 
     const router = useRouter();
-    const windowWidth = window.innerWidth;
+  const { width, height } = useWindowDimensions();
+
+    const windowWidth = width;
 
     useEffect(() => {
         const data = {

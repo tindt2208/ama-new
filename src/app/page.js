@@ -5,10 +5,12 @@ import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 import LoginMobile from "./components/loginMobile/loginMobile";
+import useWindowDimensions from '../hooks/useWindowDimension';
 
 
 function Home() {
-  const windowWidth = window.innerWidth;
+  const { width, height } = useWindowDimensions();
+  const windowWidth = width;
   const [show, setShow] = useState(false);
   const [step, setStep] = useState(1);
   const [data, setData] = useState({ email: null, password: null });
@@ -25,7 +27,7 @@ function Home() {
     localStorage.removeItem('email');
     localStorage.removeItem('password');
   }, [])
-  
+
   if (!isMounted) {
     return null;
   }
