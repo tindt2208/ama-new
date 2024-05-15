@@ -1,4 +1,6 @@
-
+html{
+    font-size: 62.5% !important;
+}
 button,input,select,textarea{
     font-family:inherit
 }
@@ -56,37 +58,43 @@ body{
     font-size:14px;
     line-height:20px;
 }
-h1{
-    font-weight:400;
-    font-size:28px;
-    line-height:36px
+
+h1 {
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 1.3
 }
-h2{
-    font-weight:700;
-    font-size:24px;
-    line-height:32px
+
+h2 {
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 1.3
 }
-h3{
-    font-weight:700;
-    font-size:18px;
-    line-height:24px
+
+h3 {
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1.25
 }
-h4{
-    font-weight:700;
-    font-size:18px;
-    line-height:24px
+
+h4 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.35
 }
-h5{
-    font-weight:700;
-    font-size:14px;
-    line-height:20px
+
+h5 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 1.35
 }
-h6{
-    font-weight:700;
-    text-transform:uppercase;
-    font-size:12px;
-    line-height:16px;
-    padding-bottom:1px
+
+h6 {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding-bottom: .1rem
 }
 .error-size-mini{
     font-size:12px!important;
@@ -111,7 +119,7 @@ h6{
     text-rendering:optimizeLegibility
 }
 .error-icon{
-    background-image:url('../../assets/img/bg3.png');
+    background-image:url('../../../assets/img/bg3.png');
     -webkit-background-size:400px 900px;
     background-size:400px 900px;
     background-repeat:no-repeat
@@ -136,7 +144,7 @@ h6{
     vertical-align:top
 }
 .error-icon-jp{
-    background-image: url('../../assets/img/bg.png');
+    background-image: url('../../../assets/img/bg.png');
     -webkit-background-size:128px 16px;
     background-size:128px 16px
 }
@@ -147,7 +155,7 @@ h6{
     bottom:3px
 }
 .error-icon.error-icon-error{
-    background-image:url('../../assets/img/bg.png');
+    background-image:url('../../../assets/img/bg.png');
     -webkit-background-size:512px 512px;
     background-size:512px 512px;
     background-repeat:no-repeat;
@@ -710,7 +718,7 @@ hr{
     z-index:1
 }
 .error-alert .error-icon.error-icon-alert{
-    background-image: url('../../assets/img/bg2.png');
+    background-image: url('../../../assets/img/bg2.png');
     -webkit-background-size:512px 512px;
     background-size:512px 512px;
     background-repeat:no-repeat;
@@ -1259,7 +1267,7 @@ textarea{
 }
 .error-input-text,input[type=date],input[type=email],input[type=number],input[type=password],input[type=search],input[type=tel],input[type=text]{
     background-color:#fff;
-    height:31px;
+    height: 4.3rem;
     padding:3px 7px;
     line-height:normal
 }

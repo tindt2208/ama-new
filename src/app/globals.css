@@ -24,6 +24,31 @@
   }
 }
 
+
+@font-face {
+  font-family: 'Amazon Ember';
+  src: local("Amazon Ember"),local("AmazonEmber-Regular"),url(https://m.media-amazon.com/images/S/sash/pDxWAF1pBB0dzGB.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/kfKKBuoqcD$AUKL.woff) format("woff")
+}
+
+@font-face {
+  font-family: 'Amazon Ember';
+  font-style: italic;
+  src: local("Amazon Ember"),local("AmazonEmber-Italic"),url(https://m.media-amazon.com/images/S/sash/WOnTLzkiaEccV7F.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/JJsp0ZvgpfwzJM6.woff) format("woff")
+}
+
+@font-face {
+  font-family: 'Amazon Ember';
+  font-weight: 700;
+  src: local("Amazon Ember"),local("AmazonEmber-Bold"),url(https://m.media-amazon.com/images/S/sash/KFPk-9IF4FqAqY-.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/mzVbGSgvdBfRLX9.woff) format("woff")
+}
+
+@font-face {
+  font-family: 'Amazon Ember';
+  font-style: italic;
+  font-weight: 700;
+  src: local("Amazon Ember"),local("AmazonEmber-BoldItalic"),url(https://m.media-amazon.com/images/S/sash/2SazJx$EeTHfhMN.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/CjbL$jCCegyfqZ7.woff) format("woff")
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -167,9 +192,11 @@ video{
   display:inline-block
 }
 html{
-  font-size:100%;
-  -webkit-text-size-adjust:100%
-}a:focus{
+
+  font-size: 62.5%;
+    -webkit-text-size-adjust:100%
+}
+a:focus{
   outline:thin dotted;
   outline:5px auto -webkit-focus-ring-color;
   outline-offset:-2px
@@ -317,3 +344,15 @@ input[type=number]:focus,input[type=password]:focus,input[type=search]:focus,inp
   align-items: center;
   
 }
+
+body {
+  font-family: "Amazon Ember",Arial,sans-serif;
+}
+
+.a-ember input,.a-ember select,.a-ember textarea {
+  font-family: "Amazon Ember",Arial,sans-serif !important;
+}
+.auth-show-password-enabled.auth-show-password-engaged.auth-show-password-ready .auth-visible-password-container {
+  display: block
+}
+

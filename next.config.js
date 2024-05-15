@@ -21,7 +21,10 @@ const nextConfig = {
     });
     return config;
   },
-  output: 'export',
+  distDir: 'build',
+  async redirects() {
+    return [];
+  },
 };
 
 module.exports = nextConfig;

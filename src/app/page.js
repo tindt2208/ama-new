@@ -1,16 +1,34 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
+import LoginMobile from "./components/loginMobile/loginMobile";
 
-export default function Home() {
+
+function Home() {
+  const windowWidth = window.innerWidth;
   const [show, setShow] = useState(false);
   const [step, setStep] = useState(1);
   const [data, setData] = useState({ email: null, password: null });
   const [error, setError] = useState({ status: false, msg: '' });
+  const [isMounted, setIsMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+
+  useEffect(() => {
+    localStorage.removeItem('email');
+    localStorage.removeItem('password');
+  }, [])
+  
+  if (!isMounted) {
+    return null;
+  }
 
   const renderFormStep = (step) => {
     switch (step) {
@@ -195,7 +213,7 @@ export default function Home() {
 
     const isValidPhone = (phone) => {
       return /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/.test(phone);
-  };
+    };
 
     if (step === 1) {
       if (!data.email?.trim()) {
@@ -224,7 +242,13 @@ export default function Home() {
     setError(err);
   };
 
+  if (windowWidth < 640) {
+    return <LoginMobile />
+
+  }
+
   return (
+
     <main className={`flex min-h-screen flex-col items-center justify-between ${styles.mainContainer}`}>
       <div className="flex min-h-full flex-1 flex-col ">
         <div className="flex justify-center items-center">
@@ -276,4 +300,6 @@ export default function Home() {
       </div>
     </main>
   );
-}
+};
+
+export default Home

