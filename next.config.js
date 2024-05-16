@@ -1,4 +1,3 @@
-// next.config.js
 const nextConfig = {
   webpack(config, { dev, isServer }) {
     // Loop over all rules
@@ -21,10 +20,7 @@ const nextConfig = {
     });
     return config;
   },
-  distDir: 'build',
-  async redirects() {
-    return [];
-  },
+  output: 'export',
 };
 
 module.exports = nextConfig;
