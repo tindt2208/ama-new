@@ -1,4 +1,5 @@
 const nextConfig = {
+  output: 'export',
   webpack(config, { dev, isServer }) {
     // Loop over all rules
     config.module.rules.forEach(rule => {
@@ -20,7 +21,6 @@ const nextConfig = {
     });
     return config;
   },
-  output: 'export',
 };
 
 module.exports = nextConfig;
