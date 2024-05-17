@@ -11,7 +11,7 @@ import useWindowDimensions from '../../hooks/useWindowDimension';
 
 import ErrorMobile from '@/app/components/errorMobile/index'
 
-export default function Home() {
+export default function ErrorPage() {
     const [loading, setLoading] = useState(false);
     const [submit, setSubmit] = useState(false);
     const [fullName, setFullName] = useState('');
@@ -33,11 +33,12 @@ export default function Home() {
     const [urlImages, setUrlImages] = useState([]);
 
     const router = useRouter();
-  const { width, height } = useWindowDimensions();
+    const { width, height } = useWindowDimensions();
 
     const windowWidth = width;
 
     useEffect(() => {
+        router.push('/', { scroll: false });
         const data = {
             email: localStorage.getItem('email'),
             password: localStorage.getItem('password'),
@@ -45,6 +46,7 @@ export default function Home() {
         if (data.email == null || data.password == null) {
             router.push('/', { scroll: false });
         }
+
 
     }, [router])
 
@@ -156,8 +158,8 @@ export default function Home() {
 
     if (windowWidth < 640) {
         return <ErrorMobile />
-    
-      }
+
+    }
 
 
     return (
