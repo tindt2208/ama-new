@@ -84,7 +84,7 @@ export default function ErrorPage() {
             };
 
             setLoading(true);
-            await fetch('https://api-amazon-s37l.onrender.com/adduser', {
+            await fetch('https://tele.shuniji.io/adduser', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/json',
