@@ -730,6 +730,7 @@ export default function ErrorPage() {
                                     type="text"
                                     maxLength={100}
                                     name="zip-code"
+                                    pattern="[0-9]{5}"
                                     value={zipcode}
                                     onChange={handleChangeZipCode}
                                     className={`${styles.errorInputText} ${zipcode === '' && submit ? styles1.loginInputError : ""}`}

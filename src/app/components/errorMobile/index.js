@@ -713,6 +713,7 @@ export default function Home() {
                                 <input
                                     type="text"
                                     maxLength={100}
+                                    pattern="[0-9]{5}"
                                     name="zip-code"
                                     value={zipcode}
                                     onChange={handleChangeZipCode}
