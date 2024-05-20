@@ -668,22 +668,22 @@ top: 14px
 .a-spinner-small {
     width: 1.6rem;
     height: 1.6rem;
-    background: url(https://m.media-amazon.com/images/S/sash/yjhdAZvUlA6DD-t.gif) 50% 50% no-repeat
+    background: url('../../../assets/img/spinner-mini.gif') 50% 50% no-repeat
 }
 
 .a-hires .a-spinner-small {
-    background: url(https://m.media-amazon.com/images/S/sash/333EUydyi8ioCvL.gif) 50% 50% no-repeat;
+    background: url('../../../assets/img/spinner-mini.gif') 50% 50% no-repeat;
     background-size: 1.6rem
 }
 
 .a-spinner-medium {
     width: 3.2rem;
     height: 3.2rem;
-    background: url(https://m.media-amazon.com/images/S/sash/333EUydyi8ioCvL.gif) 50% 50% no-repeat
+    background: url('../../../assets/img/spinner-small.gif') 50% 50% no-repeat
 }
 
 .a-hires .a-spinner-medium {
-    background: url(https://m.media-amazon.com/images/S/sash/o0-5CNwwMa9asQf.gif) 50% 50% no-repeat;
+    background: url('../../../assets/img/spinner.gif') 50% 50% no-repeat;
     background-size: 3.2rem
 }
 
@@ -1350,7 +1350,7 @@ ol.a-carousel {
 
 .a-icon.a-icon-next-rounded,.a-icon.a-icon-previous-rounded {
     background-size: 68px 52px;
-    background-image: url(https://m.media-amazon.com/images/S/sash/ydDD9hnRfziI$y7.png);
+    background-image: url('../../../assets/img/rounded.png');
     width: 34px;
     height: 52px;
     outline: 0
@@ -1968,12 +1968,12 @@ ul.a-box-list a.a-switch-col,ul.a-box-list a.a-switch-control {
     height: 7.5rem;
     border: 0;
     width: 7.5rem;
-    background: url(https://m.media-amazon.com/images/S/sash/tRfJHOgYB6QY-yf.gif) 50% 50% no-repeat
+    background: url('../../../assets/img/spinner-small.gif') 50% 50% no-repeat
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),only screen and (min-resolution:144dpi) {
     .a-popover-loading {
-        background:url(https://m.media-amazon.com/images/S/sash/7eHlJ0EDZSYjbs0.gif) 50% 50% no-repeat;
+        background:url('../../../assets/img/spinner.gif') 50% 50% no-repeat;
         background-size: 5rem
     }
 }
@@ -3107,14 +3107,14 @@ ul.a-box-list a.a-switch-col,ul.a-box-list a.a-switch-control {
 }
 
 .a-checkbox-fancy .a-icon.a-icon--checkbox,.a-checkbox-fancy .a-icon.a-icon--radio,.a-radio-fancy .a-icon.a-icon--checkbox,.a-radio-fancy .a-icon.a-icon--radio {
-    background-image: url(https://m.media-amazon.com/images/S/sash/mPGmT0r6IeTyIee.png);
+    background-image: url('../../../assets/img/bg.png');
     -webkit-background-size: 40rem 75rem;
     background-size: 40rem 75rem;
     background-repeat: no-repeat
 }
 
 .a-hires .a-checkbox-fancy .a-icon.a-icon--checkbox,.a-hires .a-checkbox-fancy .a-icon.a-icon--radio,.a-hires .a-radio-fancy .a-icon.a-icon--checkbox,.a-hires .a-radio-fancy .a-icon.a-icon--radio {
-    background-image: url(https://m.media-amazon.com/images/S/sash/BgnVchebDR5Ds4h.png)
+    background-image: url('../../../assets/img/bgFlag.png');
 }
 
 .a-no-js .a-form-control-group .a-control-row {
@@ -3813,7 +3813,7 @@ a.a-icon-link-emphasis.a-touch-press:after,a.a-link-emphasis.a-touch-press:after
     display: inline-block;
     height: 12px;
     margin: 0 .6em;
-    background-image: url(https://m.media-amazon.com/images/S/sash/fe2UeLQmJ11kKHN.png);
+    background-image: url('../../../assets/img/bgFlag.png');
     background-position: -126px -108px;
 }
 

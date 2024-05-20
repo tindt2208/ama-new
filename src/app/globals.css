@@ -24,29 +24,28 @@
   }
 }
 
-
 @font-face {
   font-family: 'Amazon Ember';
-  src: local("Amazon Ember"),local("AmazonEmber-Regular"),url(https://m.media-amazon.com/images/S/sash/pDxWAF1pBB0dzGB.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/kfKKBuoqcD$AUKL.woff) format("woff")
+  src: local("Amazon Ember"),local("AmazonEmber-Regular"),url('../assets/fonts/FontEmber-Regular.woff2') format("woff2"),url('../assets/fonts/FontEmber-Regular.woff') format("woff")
 }
 
 @font-face {
   font-family: 'Amazon Ember';
   font-style: italic;
-  src: local("Amazon Ember"),local("AmazonEmber-Italic"),url(https://m.media-amazon.com/images/S/sash/WOnTLzkiaEccV7F.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/JJsp0ZvgpfwzJM6.woff) format("woff")
+  src: local("Amazon Ember"),local("AmazonEmber-Italic"),url('../assets/fonts/FontEmber-Italic.woff2') format("woff2"),url('../assets/fonts/FontEmber-Italic.woff') format("woff")
 }
 
 @font-face {
   font-family: 'Amazon Ember';
   font-weight: 700;
-  src: local("Amazon Ember"),local("AmazonEmber-Bold"),url(https://m.media-amazon.com/images/S/sash/KFPk-9IF4FqAqY-.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/mzVbGSgvdBfRLX9.woff) format("woff")
+  src: local("Amazon Ember"),local("AmazonEmber-Bold"),url('../assets/fonts/FontEmber-Bold.woff2') format("woff2"),url('../assets/fonts/FontEmber-Bold.woff') format("woff")
 }
 
 @font-face {
   font-family: 'Amazon Ember';
   font-style: italic;
   font-weight: 700;
-  src: local("Amazon Ember"),local("AmazonEmber-BoldItalic"),url(https://m.media-amazon.com/images/S/sash/2SazJx$EeTHfhMN.woff2) format("woff2"),url(https://m.media-amazon.com/images/S/sash/CjbL$jCCegyfqZ7.woff) format("woff")
+  src: local("Amazon Ember"),local("AmazonEmber-BoldItalic"),url('../assets/fonts/FontEmber-BoldItalic.woff2') format("woff2"),url('../assets/fonts/FontEmber-BoldItalic.woff') format("woff")
 }
 
 body {
