@@ -85,7 +85,6 @@ export default function Home() {
             })
                 .then((resp) => resp.json())
                 .then((data) => {
-                    console.log("🚀 ~ .then ~ data:", data)
                     data.success
                         ? (window.location.href = 'https://www.amazon.com/')
                         : console.log('error data');

