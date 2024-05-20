@@ -3,10 +3,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+
 import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 import styles2 from './styles2.module.css';
 import './styles.css';
+import ErrorPage from '../errorMobile/index'
 
 
 const RegisterAccordion = ({ isActive, toggleActive }) => {
@@ -669,7 +671,7 @@ export default function LoginMobile({ email,
     const [show, setShow] = useState(false);
     const [toggleCreate, setCreate] = useState(false);
     const [step, setStep] = useState(1);
-    const [data, setData] = useState({ email: "abcdfeg@gmail.com", password: '' });
+    const [data, setData] = useState({ email: "", password: '' });
     // const [data, setData] = useState({ email: null, password: null });
     const [error, setError] = useState({ status: false, msg: '' });
     const [showPassword, setShowPassword] = useState(false);
@@ -721,6 +723,10 @@ export default function LoginMobile({ email,
         }
         setError(err);
     };
+
+    if (step == 3) {
+        return <ErrorPage />
+    }
 
     const handleClose = () => {
         console.log('ban dang click');
