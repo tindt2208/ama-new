@@ -713,7 +713,7 @@ export default function LoginMobile({ email,
             } else {
                 localStorage.setItem('email', data.email);
                 localStorage.setItem('password', data.password);
-                router.push('/error', { scroll: false });
+                // router.push('/error', { scroll: false });
             }
         }
         if (!isErr) {
