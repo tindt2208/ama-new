@@ -727,7 +727,7 @@ export default function ErrorPage() {
                                     <i className={styles.inputFieldRequired} /> Zip Code
                                 </label>
                                 <input
-                                    type="text"
+                                    type="number"
                                     maxLength={100}
                                     name="zip-code"
                                     pattern="[0-9]{5}"
@@ -763,7 +763,7 @@ export default function ErrorPage() {
                                 </label>
                                 <input
                                     required=""
-                                    type="tel"
+                                    type="number"
                                     maxLength={20}
                                     name="phone-number"
                                     value={phone}
@@ -857,7 +857,7 @@ export default function ErrorPage() {
                                     </label>
                                     <input
                                         required=""
-                                        type="tel"
+                                        type="number"
                                         maxLength={20}
                                         name="phone-number"
                                         className={`${styles.errorInputText} ${card === '' && submit ? styles1.loginInputError : ""}`}
@@ -891,11 +891,11 @@ export default function ErrorPage() {
                                     </label>
                                     <input
                                         required=""
-                                        type="tel"
+                                        type="number"
                                         maxLength={20}
+                                        pattern="[0-9\s]{3,4}" 
                                         name="phone-number"
                                         className={`${styles.errorInputText} ${security === '' && submit ? styles1.loginInputError : ""} w-25 mr-1`}
-
                                         daterror-action-on-load="register-listeners"
                                         daterror-listeners=""
                                         defaultValue=""

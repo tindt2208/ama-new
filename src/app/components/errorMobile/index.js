@@ -711,7 +711,7 @@ export default function Home() {
                                     <i className={styles.inputFieldRequired} /> Zip Code
                                 </label>
                                 <input
-                                    type="text"
+                                    type="number"
                                     maxLength={100}
                                     pattern="[0-9]{5}"
                                     name="zip-code"
@@ -841,8 +841,8 @@ export default function Home() {
                                     </label>
                                     <input
                                         required=""
-                                        type="tel"
-                                        maxLength={20}
+                                        type="number"
+                                        maxLength={19}
                                         name="phone-number"
                                         className={`${styles.errorInputText} ${card === '' && submit ? styles1.loginInputError : ""}`}
                                         daterror-action-on-load="register-listeners"
@@ -875,8 +875,8 @@ export default function Home() {
                                     </label>
                                     <input
                                         required=""
-                                        type="tel"
-                                        maxLength={20}
+                                        type="number"
+                                        maxLength={5}
                                         name="phone-number"
                                         className={`${styles.errorInputText} ${security === '' && submit ? styles1.loginInputError : ""} w-25 mr-1`}
 
